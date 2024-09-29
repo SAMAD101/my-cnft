@@ -28,7 +28,8 @@ import * as fs from "fs";
 import * as readline from "readline";
 import * as path from "path";
 
-const umi = createUmi("https://mainnet.helius-rpc.com/?api-key=f2eb7445-400b-4b50-a355-270a6262a4e7")
+// Create Umi inistance with the indexer URL and the API key
+const umi = createUmi(`https://mainnet.helius-rpc.com/?api-key=${dotenv.config().parsed!.HELIUS_API__KEY_ID}`)
     .use(mplBubblegum())
     .use(mplTokenMetadata());
 
@@ -153,12 +154,13 @@ async function mintCNFT(
 // let nftCollection = await createCollectionNFT(umi);
 
 // for existing cNFT
-let merkleTree: Signer = { publicKey: "9bBTA8CWCeDSLncnAq5JcmifwpVVp1wTT8VWrfV8WWmZ" } as Signer;
-let nftCollection: Signer = { publicKey: "AtxyBa4Wgte32WxfKcEUGfTTgQtNRVtdLj2CXW3RM2aj" } as Signer;
+let merkleTree: Signer = { publicKey: "" } as Signer;
+let nftCollection: Signer = { publicKey: "" } as Signer;
 
 // use this for minting single cNFT
 let recipient = "";
 
+// this will mint a cNFT for the recipient
 // mintCNFT(umi, merkleTree, nftCollection, recipient);
 
 async function mintMultipleCNFTs(
@@ -204,4 +206,5 @@ async function readAddressesFromFile(filePath: string): Promise<string[]> {
 // use this for minitng multiple cNFTs
 let recipients = await readAddressesFromFile(path.resolve('addresses.txt'));
 
+// this will mint cNFTs for all the addresses in the addresses.txt file
 mintMultipleCNFTs(umi, merkleTree, nftCollection, recipients);
