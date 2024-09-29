@@ -1,0 +1,20 @@
+{
+  "name": "my-cnft-project",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "npx tsx src/mintCNFT.ts"
+  },
+  "dependencies": {
+    "@metaplex-foundation/mpl-bubblegum": "^4.2.1",
+    "@metaplex-foundation/mpl-token-metadata": "^3.2.1",
+    "@metaplex-foundation/umi-bundle-defaults": "^0.9.2",
+    "@solana-developers/helpers": "^2.5.6",
+    "bs58": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/bs58": "^4.0.4",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.1"
+  }
+}

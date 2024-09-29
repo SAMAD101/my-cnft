@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+      "target": "ES2020",                  // Or higher (ES2020 is good)
+      "module": "ESNext",                  // Use 'ESNext' for ES modules
+      "moduleResolution": "node",          // Use Node.js module resolution
+      "esModuleInterop": true,             // Enable interoperability between CommonJS and ES modules
+      "allowSyntheticDefaultImports": true,
+      "strict": true,                      // Enable strict type-checking options
+      "outDir": "./dist",                  // Redirect output to 'dist' directory
+      "sourceMap": true,
+      "resolveJsonModule": true,           // Allow importing .json files
+      "isolatedModules": true,             // Required for ESM
+      "noEmit": true                       // Do not emit output files; ts-node handles this
+    },
+    "include": ["./src/**/*"],
+    "exclude": ["node_modules", "dist"]
+  }
+  
